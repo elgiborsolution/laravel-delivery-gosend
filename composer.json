@@ -1,0 +1,62 @@
+{
+  "name": "elgibor-solution/laravel-delivery-gosend",
+  "description": "Integrasi dengan API GoSend untuk pengiriman barang",
+  "type": "library",
+  "license": "Apache-2.0",
+  "keywords": [
+    "laravel",
+    "gosend",
+    "delivery",
+    "logistics",
+    "multi-tenant"
+  ],
+  "homepage": "https://github.com/elgibor-solution/laravel-delivery-gosend",
+  "authors": [
+    {
+      "name": "Tommy Hendrawan",
+      "email": "{{$your_email_here}}"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^10.0",
+    "illuminate/http": "^10.0",
+    "illuminate/events": "^10.0",
+    "illuminate/database": "^10.0",
+    "guzzlehttp/guzzle": "^7.0|^8.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^8.0",
+    "pestphp/pest": "^2.0",
+    "pestphp/pest-plugin-laravel": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ESolution\\\\GoSend\\\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ESolution\\\\GoSend\\\\Tests\\\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ESolution\\\\GoSend\\\\Providers\\\\GoSendServiceProvider"
+      ],
+      "aliases": {
+        "GoSend": "ESolution\\\\GoSend\\\\Facades\\\\GoSend"
+      }
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "support": {
+    "issues": "https://github.com/elgibor-solution/laravel-delivery-gosend/issues",
+    "source": "https://github.com/elgibor-solution/laravel-delivery-gosend"
+  }
+}
