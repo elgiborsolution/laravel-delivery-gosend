@@ -32,21 +32,21 @@
   },
   "autoload": {
     "psr-4": {
-      "ESolution\\\\GoSend\\\\": "src/"
+      "ESolution\\GoSend\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ESolution\\\\GoSend\\\\Tests\\\\": "tests/"
+      "ESolution\\GoSend\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "ESolution\\\\GoSend\\\\Providers\\\\GoSendServiceProvider"
+        "ESolution\\GoSend\\Providers\\GoSendServiceProvider"
       ],
       "aliases": {
-        "GoSend": "ESolution\\\\GoSend\\\\Facades\\\\GoSend"
+        "GoSend": "ESolution\\GoSend\\Facades\\GoSend"
       }
     }
   },
