@@ -5,6 +5,7 @@ namespace ESolution\GoSend\Providers;
 use Illuminate\Support\ServiceProvider;
 use ESolution\GoSend\Contracts\GoSendClientInterface;
 use ESolution\GoSend\Services\GoSendHttpClient;
+use Illuminate\Http\Client\Factory as HttpFactory;
 
 class GoSendServiceProvider extends ServiceProvider
 {
@@ -14,7 +15,7 @@ class GoSendServiceProvider extends ServiceProvider
 
         $this->app->singleton(GoSendClientInterface::class, function ($app) {
             return new GoSendHttpClient(
-                httpClient: $app->make('http.client'),
+                httpClient: $app->make(HttpFactory::class),
                 config: $app['config']->get('gosend', [])
             );
         });
@@ -31,7 +32,7 @@ class GoSendServiceProvider extends ServiceProvider
         if (! class_exists('CreateGosendDeliveriesTable')) {
             $this->publishes([
                 __DIR__ . '/../../database/migrations/2025_01_01_000000_create_gosend_deliveries_table.php' =>
-                    database_path('migrations/' . date('Y_m_d_His') . '_create_gosend_deliveries_table.php'),
+                database_path('migrations/' . date('Y_m_d_His') . '_create_gosend_deliveries_table.php'),
             ], 'gosend-migrations');
         }
 
