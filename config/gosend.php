@@ -78,7 +78,7 @@ return [
     |
     */
     'webhook' => [
-        'token_header' => env('GOSEND_WEBHOOK_TOKEN_HEADER', 'X-Callback-Token'),
+        'token_header' => env('GOSEND_WEBHOOK_TOKEN_HEADER', 'authorization'),
         'token' => env('GOSEND_WEBHOOK_TOKEN'),
         'route_name' => 'gosend.webhook',
     ],
